@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "927278810015",
+    "firebase_url": "https://smart-converter-f9c01.firebaseio.com",
+    "project_id": "smart-converter-f9c01",
+    "storage_bucket": "smart-converter-f9c01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927278810015:android:bd27fd6fe3d94f3e",
+        "android_client_info": {
+          "package_name": "com.hexasoftwares.smartconverter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927278810015-ebjv19c5bajknci9tnrt0u0rb6jgo9pr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJn7jScYQ0-fZ_cwnFNg-wYmaK_vE2vec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

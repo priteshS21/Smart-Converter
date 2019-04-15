@@ -1,0 +1,27 @@
+<resources>
+<string name="app_name">Smart Converter</string>
+<string name="banner_ad_unit_id">ca-app-pub-9979213265917091/3090591962</string>
+
+<string-array name="titles">
+    <item>Area</item>
+    <item>Digital Storage</item>
+    <item>Frequency</item>
+    <item>Length</item>
+    <item>Mass/Weight</item>
+    <item>Speed</item>
+    <item>Temperature</item>
+    <item>Time</item>
+</string-array>
+
+<string-array name="description">
+    <item>Acre, Hectare, Sq inch</item>
+    <item>Bit, Byte, Nibble</item>
+    <item>Hertz, Kilohertz, Megahertz</item>
+    <item>Kilometer, Meter, Centimeter</item>
+    <item>Gram, Kilogram, Milligram</item>
+    <item>Kilometer/Hr, Mile Hr</item>
+    <item>Kelvin, Calsious</item>
+    <item>Hour, Minutes, Second</item>
+</string-array>
+
+</resources>
