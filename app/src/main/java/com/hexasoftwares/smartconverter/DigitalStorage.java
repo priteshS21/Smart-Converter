@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+import java.util.Objects;
+
 public class DigitalStorage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     int index_from, index_to;
     String item_from, item_to, stvalue;
@@ -33,20 +35,21 @@ public class DigitalStorage extends AppCompatActivity implements AdapterView.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.common_activity);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        e1 = (EditText) findViewById(R.id.etv_from);
-        e2 = (TextView) findViewById(R.id.etv_to);
-        tv_sign_from = (TextView) findViewById(R.id.sign_from);
-        tv_sign_to = (TextView) findViewById(R.id.sign_to);
+        e1 = findViewById(R.id.etv_from);
+        e2 = findViewById(R.id.etv_to);
+        tv_sign_from = findViewById(R.id.sign_from);
+        tv_sign_to = findViewById(R.id.sign_to);
 
-        Spinner spinner_from = (Spinner) findViewById(R.id.spinner_from);
-        ArrayAdapter<String> adapter_from = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CONV_OPTIONS_FROM);
+        Spinner spinner_from = findViewById(R.id.spinner_from);
+        ArrayAdapter<String> adapter_from;
+        adapter_from = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CONV_OPTIONS_FROM);
         adapter_from.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // Specify the layout to use when the list of choices appears
         spinner_from.setAdapter(adapter_from);
         spinner_from.setOnItemSelectedListener(this);// Apply the adapter to the spinner
 
-        Spinner spinner_to = (Spinner) findViewById(R.id.spinner_to);
+        Spinner spinner_to = findViewById(R.id.spinner_to);
         ArrayAdapter<String> adapter_to = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CONV_OPTIONS_TO);
         adapter_to.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // Specify the layout to use when the list of choices appears
         spinner_to.setAdapter(adapter_to);
@@ -55,7 +58,7 @@ public class DigitalStorage extends AppCompatActivity implements AdapterView.OnI
         /* Adview code starts here*/
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo ni = cm.getActiveNetworkInfo();
-        AdView adView = (AdView) findViewById(R.id.adView);
+        AdView adView = findViewById(R.id.adView);
 
         if (ni == null) {
             adView.setVisibility(View.GONE);

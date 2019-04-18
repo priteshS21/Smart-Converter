@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
@@ -40,7 +41,7 @@ public class SelectionScreen extends AppCompatActivity {
             /* Adview code starts here*/
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo ni = cm.getActiveNetworkInfo();
-        AdView adView = (AdView) findViewById(R.id.adView);
+        AdView adView = findViewById(R.id.adView);
 
         if (ni == null) {
             adView.setVisibility(View.GONE);
@@ -55,7 +56,7 @@ public class SelectionScreen extends AppCompatActivity {
         Resources res = getResources();
         titles = res.getStringArray(R.array.titles);
         description = res.getStringArray(R.array.description);
-        list = (ListView) findViewById(R.id.list1);
+        list = findViewById(R.id.list1);
         MyAdapter adapter = new MyAdapter(this, titles, imgs, description);
         list.setAdapter(adapter);
         list.setOnItemClickListener(mMessageClickedHandler);
@@ -127,13 +128,14 @@ public class SelectionScreen extends AppCompatActivity {
             this.myDescriptions = desc;
         }
 
+        @NonNull
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View row = inflater.inflate(R.layout.row, parent, false);
-            ImageView myImage = (ImageView) row.findViewById(R.id.icon);
-            TextView myTitle = (TextView) row.findViewById(R.id.text1);
-            TextView myDesc = (TextView) row.findViewById(R.id.text2);
+            ImageView myImage = row.findViewById(R.id.icon);
+            TextView myTitle = row.findViewById(R.id.text1);
+            TextView myDesc = row.findViewById(R.id.text2);
             myImage.setImageResource(images[position]);
             myTitle.setText(mytitles[position]);
             myDesc.setText(myDescriptions[position]);
